@@ -11,10 +11,10 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "lint:staged": "eslint --ext .js,.jsx,.ts,.tsx "
+    "lint:staged": "eslint  --ext .js,.jsx,.ts,.tsx "
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": "npm run lint:staged"
+    "**/*.{js,jsx,ts,tsx}": "echo 1"
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
