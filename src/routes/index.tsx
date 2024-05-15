@@ -1,10 +1,10 @@
 import { lazy } from "react";
 import { HOME_PATH, LOGIN_PATH, TEST_PATH } from "./constant";
 
-const Layout = lazy(() => import('../layout/'))
-const Login = lazy(() => import('../pages/login'))
-const Home = lazy(() => import('../pages/home'))
-const Test = lazy(() => import('../pages/test'))
+const Layout = lazy(() => import('@/layout'))
+const Login = lazy(() => import('@/pages/login'))
+const Home = lazy(() => import('@/pages/home'))
+const Test = lazy(() => import('@/pages/test'))
 
 
 const getRoutes = () => {
