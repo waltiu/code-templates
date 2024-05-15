@@ -1,14 +1,14 @@
 import { create } from 'zustand'
 interface globalState {
-    bears: number
+    isLogin: boolean
     increase: (by: number) => void
 }
 
 const useGloBalStore = create<globalState>((set) => ({
-    bears: 0,
+    isLogin: true,
     increase: (value) => {
         set((state) => ({
-            bears: state.bears + value
+           isLogin:true
         }))
     }
 }))

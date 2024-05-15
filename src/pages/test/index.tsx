@@ -1,7 +1,7 @@
 const Test =()=>{
     return (
         <div>
-            1
+            test
         </div>
     )
 }

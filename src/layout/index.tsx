@@ -1,17 +1,26 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { MenuItem, getMenus } from './menu';
 import styles from './index.module.less';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { getUrlPath } from '../utils/url';
 
 const { Header, Content, Sider } = Layout;
 
 const LayoutConatiner: React.FC = () => {
     const navigate = useNavigate();
+    const menusItems = getMenus();
+    const [selectedKeys, setSelectKeys] = useState<string[]>([])
+
+
     const onMenuItemClick = (menu: MenuItem) => {
         navigate(menu?.key as string);
+        setSelectKeys([menu?.key as string])
     };
-    const menusItems = getMenus();
+
+    useEffect(() => {
+        setSelectKeys([getUrlPath()])
+    }, [])
 
     return (
         <Layout className={styles.layout}>
@@ -23,7 +32,7 @@ const LayoutConatiner: React.FC = () => {
                 <Sider width={200}>
                     <Menu
                         mode="inline"
-                        defaultSelectedKeys={[menusItems[0]?.key as string]}
+                        selectedKeys={selectedKeys}
                         style={{ height: '100%', borderRight: 0 }}
                         items={menusItems}
                         onClick={onMenuItemClick}
@@ -31,7 +40,7 @@ const LayoutConatiner: React.FC = () => {
                 </Sider>
                 <Layout>
                     <Content className={styles["outlet-container"]}>
-                        <Suspense  fallback={<div>loading...</div>}>
+                        <Suspense fallback={<div>loading...</div>}>
                             <Outlet />
                         </Suspense>
                     </Content>
