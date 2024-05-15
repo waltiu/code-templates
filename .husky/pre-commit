@@ -1,1 +1,6 @@
-echo 1
+
+npm run tsc
+
+./scripts/checkCommitMessage "$1"
+
+npm run lint-staged
