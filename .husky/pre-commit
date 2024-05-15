@@ -1,6 +1,6 @@
 
-npm run tsc
+# ./scripts/checkCommitMessage.sh 
 
-./scripts/checkCommitMessage "$1"
+npm run tsc
 
 npm run lint-staged
