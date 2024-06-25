@@ -1,8 +1,8 @@
+import { MenuProps } from 'antd';
 import {
     DesktopOutlined,
     PieChartOutlined,
 } from '@ant-design/icons';
-import { MenuProps } from 'antd';
 import { HOME_PATH, TEST_PATH } from '../routes/constant';
 
 export type MenuItem = Required<MenuProps>['items'][number];

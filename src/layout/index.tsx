@@ -1,13 +1,13 @@
-import React, { Suspense, useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
-import { MenuItem, getMenus } from './menu';
-import styles from './index.module.less';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { getUrlPath } from '../utils/url';
+import { MenuItem, getMenus } from './menu';
+import styles from './index.module.less';
 
 const { Header, Content, Sider } = Layout;
 
-const LayoutConatiner: React.FC = () => {
+const LayoutContainer: React.FC = () => {
     const navigate = useNavigate();
     const menusItems = getMenus();
     const [selectedKeys, setSelectKeys] = useState<string[]>([])
@@ -50,4 +50,4 @@ const LayoutConatiner: React.FC = () => {
     );
 };
 
-export default LayoutConatiner;
+export default LayoutContainer;
