@@ -1,6 +1,6 @@
-export const getUrlParams = (url: string, key?: string) => {
+export const getUrlParams = (url, key) => {
     const paramsRegex = /[?&]+([^=&]+)=([^&]*)/gi;
-    let params = {} as any;
+    let params = {} ;
     let match;
     while ((match = paramsRegex.exec(url))) {
         params[match[1]] = match[2];

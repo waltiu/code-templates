@@ -1,21 +1,21 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
-import { MenuItem, getMenus } from './menu';
+import { getMenus } from './menu';
 import styles from './index.module.less';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { getUrlPath } from '../utils/url';
 
 const { Header, Content, Sider } = Layout;
 
-const LayoutConatiner: React.FC = () => {
+const LayoutContainer = () => {
     const navigate = useNavigate();
     const menusItems = getMenus();
-    const [selectedKeys, setSelectKeys] = useState<string[]>([])
+    const [selectedKeys, setSelectKeys] = useState([])
 
 
-    const onMenuItemClick = (menu: MenuItem) => {
-        navigate(menu?.key as string);
-        setSelectKeys([menu?.key as string])
+    const onMenuItemClick = (menu) => {
+        navigate(menu?.key );
+        setSelectKeys([menu?.key ])
     };
 
     useEffect(() => {
@@ -50,4 +50,4 @@ const LayoutConatiner: React.FC = () => {
     );
 };
 
-export default LayoutConatiner;
+export default LayoutContainer;

@@ -1,10 +1,7 @@
 import { create } from 'zustand'
-interface globalState {
-    isLogin: boolean
-    increase: (by: boolean) => void
-}
 
-const useGloBalStore = create<globalState>((set) => ({
+
+const useGloBalStore = create((set) => ({
     isLogin: true,
     increase: (value) => {
         set(() => ({
