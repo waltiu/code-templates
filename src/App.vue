@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+const a =ref(2)
 </script>
 
 <template>
   <div>
+    {{ a }}
     <el-button type="primary">按钮</el-button>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
