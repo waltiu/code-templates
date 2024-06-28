@@ -1,0 +1,27 @@
+{
+  "name": "lib",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "node dist/index.cjs",
+    "build": "tsup index.ts --dts  --format esm,cjs --minify",
+    "build:watch": "tsup index.ts --dts  --format esm,cjs --minify --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["waltiu","npc"],
+  "author": "waltiu",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
