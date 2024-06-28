@@ -1,0 +1,1 @@
+export type logType = (text: string) => void

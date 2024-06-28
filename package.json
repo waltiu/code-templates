@@ -1,0 +1,25 @@
+{
+  "name": "npc",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm -F demo run start",
+    "changeset": "changeset",
+    "ci:publish": "pnpm publish -r --no-git-checks",
+    "pre-publish": "npm run changeset && pnpm changeset version && git push"
+  },
+  "author": "waltiu",
+  "license": "ISC",
+  "dependencies": {
+    "lib": "workspace:^",
+    "types": "workspace:^",
+    "utils": "workspace:^"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
