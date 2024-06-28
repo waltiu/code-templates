@@ -11,8 +11,8 @@
   "type": "module",
   "scripts": {
     "test": "node dist/index.cjs",
-    "build": "tsup index.ts --dts  --format esm,cjs --minify",
-    "build:watch": "tsup index.ts --dts  --format esm,cjs --watch"
+    "build": "tsup index.ts --dts  --format esm,cjs --minify --clean",
+    "build:watch": "tsup index.ts --dts  --format esm,cjs --watch --clean"
   },
   "publishConfig": {
     "access": "public"
