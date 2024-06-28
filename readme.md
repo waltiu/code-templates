@@ -7,9 +7,9 @@
 
 ## 技术栈
 
-* vue 3+
-* ts 5+
+* vue 3.4+
+* ts 5.2+
 * pinia 2+
-* less 4+
-* vite 5+
-*
+* less 4.2+
+* vite 5.3+
+* element plus 2.7+
