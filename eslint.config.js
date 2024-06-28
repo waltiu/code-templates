@@ -26,5 +26,6 @@ export default tseslint.config({
   },
   rules: {
     "@typescript-eslint/no-explicit-any": 0,
+    "vue/multi-word-component-names":0
   },
 });

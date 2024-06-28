@@ -22,7 +22,8 @@
   "dependencies": {
     "element-plus": "^2.7.6",
     "pinia": "^2.1.7",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.5.0",
@@ -39,6 +40,7 @@
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.2",
     "vite": "^5.3.1",
+    "vite-plugin-inspect": "^0.8.4",
     "vue-tsc": "^2.0.21"
   }
 }
