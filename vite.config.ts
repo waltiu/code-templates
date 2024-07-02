@@ -1,13 +1,47 @@
-import path from "path"
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig, Plugin } from 'vite'
+import _fs from 'fs'
+import path from 'path'
+// import TypeDocPlugin from './vite-typedoc-plugin'
 
-// https://vitejs.dev/config/
+const fs = _fs.promises
+
 export default defineConfig({
-  resolve:{
-    alias:{
-      '@': path.resolve(__dirname, 'src')
-    }
+  clearScreen: false,
+  plugins: [
+    ...(process.env.NETLIFY ? [] : [copyPiniaPlugin()]),
+    // TODO: actual plugin that works well
+    // TypeDocPlugin({
+    //   name: 'Pinia',
+    //   entryPoints: [
+    //     path.resolve(__dirname, '../pinia/src/index.ts'),
+    //     path.resolve(__dirname, '../testing/src/index.ts'),
+    //     path.resolve(__dirname, '../nuxt/src/index.ts'),
+    //   ],
+    // }),
+  ],
+  define: {
+    __DEV__: 'true',
+    __BROWSER__: 'true',
   },
-  plugins: [react()],
+  optimizeDeps: {
+    exclude: ['vue-demi', '@vueuse/shared', '@vueuse/core', 'pinia'],
+  },
 })
+
+function copyPiniaPlugin(): Plugin {
+  return {
+    name: 'copy-pinia',
+    async generateBundle() {
+      const filePath = path.resolve(__dirname, '../pinia/dist/pinia.mjs')
+
+      // throws if file doesn't exist
+      await fs.access(filePath)
+
+      this.emitFile({
+        type: 'asset',
+        fileName: 'pinia.mjs',
+        source: await fs.readFile(filePath, 'utf-8'),
+      })
+    },
+  }
+}
