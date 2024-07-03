@@ -220,7 +220,7 @@ store.someAction.mockResolvedValue('some value')
 
 ### 指定 createSpy 函数 %{#specifying-the-createspy-function}%
 
-当使用 Jest，或 vitest 且设置 `globals: true` 时，`createTestingPinia` 会自动使用现有测试框架 (`jest.fn` 或 `vitest.fn`) 的 spy 函数存根 (stub) action。如果你使用的是不同的框架，你需要提供一个 [createSpy](/zh/api/interfaces/pinia_testing.TestingOptions.html#createspy) 选项：
+当使用 Jest，或 vitest 且设置 `globals: true` 时，`createTestingPinia` 会自动使用现有测试框架 (`jest.fn` 或 `vitest.fn`) 的 spy 函数存根 (stub) action。如果你使用的是不同的框架，你需要提供一个 [createSpy](/src/api/interfaces/pinia_testing.TestingOptions.html#createspy) 选项：
 
 ```js
 import sinon from 'sinon'
@@ -285,7 +285,7 @@ const wrapper = mount(Counter, {
 
 ## 对组件单元测试(Vue 2) %{#unit-test-components-vue-2}%
 
-当你使用的是 [Vue Test Utils 1](https://v1.test-utils.vuejs.org/zh/) 时，请将 Pinia 安装在 `localVue` 上：
+当你使用的是 [Vue Test Utils 1](https://v1.test-utils.vuejs.org/src/) 时，请将 Pinia 安装在 `localVue` 上：
 
 ```js
 import { PiniaVuePlugin } from 'pinia'

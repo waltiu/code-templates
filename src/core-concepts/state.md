@@ -93,7 +93,7 @@ store.count++
 
 ## 重置 state %{#resetting-the-state}%
 
-使用[选项式 API](/zh/core-concepts/index.md#option-stores) 时，你可以通过调用 store 的 `$reset()` 方法将 state 重置为初始值。
+使用[选项式 API](/src/core-concepts/index.md#option-stores) 时，你可以通过调用 store 的 `$reset()` 方法将 state 重置为初始值。
 
 ```js
 const store = useStore()
@@ -236,7 +236,7 @@ pinia.state.value = {}
 
 ## 订阅 state %{#subscribing-to-the-state}%
 
-类似于 Vuex 的 [subscribe 方法](https://vuex.vuejs.org/zh/api/index.html#subscribe)，你可以通过 store 的 `$subscribe()` 方法侦听 state 及其变化。比起普通的 `watch()`，使用 `$subscribe()` 的好处是 _subscriptions_ 在 _patch_ 后只触发一次 (例如，当使用上面的函数版本时)。
+类似于 Vuex 的 [subscribe 方法](https://vuex.vuejs.org/src/api/index.html#subscribe)，你可以通过 store 的 `$subscribe()` 方法侦听 state 及其变化。比起普通的 `watch()`，使用 `$subscribe()` 的好处是 _subscriptions_ 在 _patch_ 后只触发一次 (例如，当使用上面的函数版本时)。
 
 ```js
 cartStore.$subscribe((mutation, state) => {
