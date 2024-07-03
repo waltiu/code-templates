@@ -33,8 +33,3 @@ features:
     details: Pinia 大小只有 1kb 左右，你甚至可能忘记它的存在！
 ---
 
-<script setup>
-import HomeSponsors from './.vitepress/theme/components/HomeSponsors.vue'
-</script>
-
-<HomeSponsors/>
