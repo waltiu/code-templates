@@ -1,14 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { searchOptions } from './search'
-import { backMenusConfig, devopsMenusConfig, feMenusConfig } from './menu'
-export const META_IMAGE = 'https://pinia.vuejs.org/social.png'
-export const isProduction =
-  process.env.NETLIFY && process.env.CONTEXT === 'production'
-
-if (process.env.NETLIFY) {
-  console.log('Netlify build', process.env.CONTEXT)
-}
-
+import { backMenusConfig, devopsMenusConfig, feMenusConfig, homeMenusConfig, productMenusConfig } from './menu'
 
 const rControl = /[\u0000-\u001f]/g
 const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’<>,.?/]+/g
@@ -65,7 +57,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     socialLinks: [
-      { icon: 'x', link: 'https://twitter.com/posva' }
+      { icon: 'x', link: 'www.baidu.com' }
     ],
     footer: {
       copyright: 'Copyright © 2019-present Eduardo San Martin Morote',
@@ -89,9 +81,14 @@ export default defineConfig({
       next: '下一页',
     },
     nav: [
+      productMenusConfig,
       feMenusConfig,
       backMenusConfig,
       devopsMenusConfig,
+      {
+        text:"关于",
+        link:"/src/about"
+      },
       {
         text: '相关链接',
         items: [
@@ -107,9 +104,11 @@ export default defineConfig({
       },
     ],
     sidebar: {
-      [feMenusConfig.link]: feMenusConfig.children,
-      [backMenusConfig.link]: backMenusConfig.children,
-      [devopsMenusConfig.link]: devopsMenusConfig.children,
+      [productMenusConfig.link]:productMenusConfig.items,
+      [feMenusConfig.link]: feMenusConfig.items,
+      [backMenusConfig.link]: backMenusConfig.items,
+      [devopsMenusConfig.link]: devopsMenusConfig.items,
+      "src/main": homeMenusConfig.items
     },
   }
 })

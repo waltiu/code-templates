@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 开始查看
-      link: /src/introduction
+      link: /src/main/develop.md
     - theme: alt
       text: Demo 演示
       link: https://stackblitz.com/github/piniajs/example-vue-3-vite

@@ -1,109 +1,145 @@
-export const feMenusConfig={
-    link:"/src/fe",
-    text:"前端",
-    children:[
+export const productMenusConfig = {
+  link: "/src/project",
+  text: "产品",
+  items: [
+    {
+      text:"产品矩阵"
+    },
+    {
+      text:"系统列表",
+      items:[
         {
-            text: '介绍',
-            items: [
-              {
-                text: 'Pinia 是什么？',
-                link: '/src/introduction.html',
-              },
-              {
-                text: '开始',
-                link: '/src/introduction.html',
+          text: '项目1',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '项目2',
+          link: '/src/introduction.html',
+        }
+      ]
+    }
+  ]
+}
+export const feMenusConfig = {
+  link: "/src/fe",
+  text: "前端",
+  items: [
+    {
+      text:"团队技术栈",
+      items:[
+        {
+          text: '项目列表',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '传统项目（Vue）',
+          link: '/src/introduction.html',
+        },
+        {
+          text: 'AI大数据项目（React）',
+          link: '/src/introduction.html',
+        },
+      ]
+    },
+    {
+      text: '开发规范',
+      collapsed: false,
+      items: [
+        {
+          text: '开发流程规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '目录结构规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '版本控制规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '代码编写规范',
+          link: '/src/introduction.html',
+        },
+      ],
+    },
+    {
+      text: '团队沉淀',
+      collapsed: false,
+      items: [
+        { text: 'wl-http', link: '/src/core-concepts/' },
+        { text: 'wl-create-app', link: '/src/core-concepts/state.html' },
+      ],
+    }
+  ]
+}
+export const backMenusConfig = {
+  link: "/src/back",
+  text: "后端",
+  items: [
+    {
+      text:"团队技术栈",
+      collapsed: true,
+      items:[
+        {
+          text: '项目列表',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '传统项目（Vue）',
+          link: '/src/introduction.html',
+        },
+        {
+          text: 'AI大数据项目（React）',
+          link: '/src/introduction.html',
+        },
+      ]
+    },
+    {
+      text: '开发规范',
+      collapsed: true,
+      items: [
+        {
+          text: '开发流程规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '目录结构规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '版本控制规范',
+          link: '/src/introduction.html',
+        },
+        {
+          text: '代码编写规范',
+          link: '/src/introduction.html',
+        },
+      ],
+    },
+  ]
+}
+export const devopsMenusConfig = {
+  link: "https://www.baidu.com/",
+  text: "运维",
+}
 
-                children:[
-                    {
-                        text: 'Pinia 是什么？',
-                        link: '/src/introduction.html',
-                      },
-                      {
-                        text: 'Pinia 是什么？',
-                        link: '/src/introduction.html',
-                      },
-                ]
-              },
-            ],
-          },
-          {
-            text: '核心概念',
-            items: [
-              { text: '定义 Store', link: '/src/core-concepts/' },
-              { text: 'State', link: '/src/core-concepts/state.html' },
-              { text: 'Getter', link: '/src/core-concepts/getters.html' },
-              { text: 'Action', link: '/src/core-concepts/actions.html' },
-              { text: '插件', link: '/src/core-concepts/plugins.html' },
-              {
-                text: '组件外的 Store',
-                link: '/src/core-concepts/outside-component-usage.html',
-              },
-            ],
-          },
-          {
-            text: '服务端渲染 (SSR)',
-            items: [
-              {
-                text: 'Vue 与 Vite',
-                link: '/src/ssr/',
-              },
-              {
-                text: 'Nuxt.js',
-                link: '/src/ssr/nuxt.html',
-              },
-            ],
-          },
-          {
-            text: '手册',
-            collapsed: false,
-            items: [
-              {
-                text: '目录',
-                link: '/src/cookbook/',
-              },
-              {
-                text: '从 Vuex ≤4 迁移',
-                link: '/src/cookbook/migration-vuex.html',
-              },
-              {
-                text: '热更新',
-                link: '/src/cookbook/hot-module-replacement.html',
-              },
-              {
-                text: '测试',
-                link: '/src/cookbook/testing.html',
-              },
-              {
-                text: '不使用 setup() 的用法',
-                link: '/src/cookbook/options-api.html',
-              },
-              {
-                text: '组合式 Stores',
-                link: '/src/cookbook/composing-stores.html',
-              },
-              {
-                text: 'VSCode 代码片段',
-                link: '/src/cookbook/vscode-snippets.html',
-              },
-              {
-                text: '从 v0/v1 迁移至 v2',
-                link: '/src/cookbook/migration-v1-v2.html',
-              },
-              {
-                text: '处理组合式函数',
-                link: '/src/cookbook/composables.html',
-              },
-            ],
-          },
-    ]
-}
-export const backMenusConfig={
-    link:"/src/back",
-    text:"后端",
-    children:[]
-}
-export const devopsMenusConfig={
-    link:"/src/devops",
-    text:"运维",
-    children:[]
+export const homeMenusConfig = {
+  text: "全部",
+  items: [
+    {
+      text: "简介",
+      items:[
+        {
+          text: "关于白皮书",
+          link: "/src/main/develop.md"
+        }
+      ]
+
+    },
+    productMenusConfig,
+    feMenusConfig,
+    backMenusConfig,
+    devopsMenusConfig
+  ]
 }
